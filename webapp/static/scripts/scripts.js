@@ -16,9 +16,25 @@ window.addEventListener('resize', checkScreenWidth);
 
 window.addEventListener('DOMContentLoaded', checkScreenWidth);  */
 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('btn-showpassword').addEventListener('click', function () {
+
+        const input_password = document.getElementById('id_password');
+
+        if (input_password.type === "password") {
+            input_password.type = "text";
+        } else {
+            input_password.type = "password";
+        }
+
+
+    });
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('button-show-menu').addEventListener('click', function () {
+
         var div = document.getElementById('menu')
         var contenido = document.getElementById('contenido')
         var container = document.getElementById('container')
@@ -57,17 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('Button-addObject-footer').addEventListener('click', function () {
+
         var div = document.getElementById('form-clients');
         var divtabla = document.getElementById('div-generalTable');
         var divbuscador = document.getElementById('div-searchEngine');
@@ -91,6 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('Button-addObject-footer').addEventListener('click', function () {

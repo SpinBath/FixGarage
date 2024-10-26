@@ -16,12 +16,12 @@
 }
 
 #clientsList-th-phone {
-    min-width: auto;
+    min-width: 150px;
 
 }
 
 #clientsList-th-email {
-    min-width: auto;
+    min-width: 200px;
 
 }
 

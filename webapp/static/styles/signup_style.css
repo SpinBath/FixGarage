@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins'),
+         url('../fonts/Poppins-Regular.ttf') format("truetype");
+  }
+  
 *{
     font-family: Poppins;
 }
@@ -66,7 +72,7 @@ input{
     width: 100%;
 }
 
-.btn-primary{
+#btn-showpassword{
     position: absolute;
     left: 93%;
     background-color: #201E43;

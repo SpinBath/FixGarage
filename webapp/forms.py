@@ -15,7 +15,7 @@ class vehicleForm(forms.ModelForm):
         fields = ['owner', 'brand', 'model', 'year', 'license_plate']
     
     def __init__(self, *args, **kwargs):
-        user = kwargs.pop('user')  # Sacamos el usuario de los argumentos
+        user = kwargs.pop('user') 
         super(vehicleForm, self).__init__(*args, **kwargs)
 
         self.fields['owner'].queryset = Clients.objects.filter(user=user)
@@ -27,7 +27,7 @@ class servicesForm(forms.ModelForm):
         fields = ['vehicle', 'owner','description','departure_date','entry_date', 'price']
     
     def __init__(self, *args, **kwargs):
-        user = kwargs.pop('user')  # Sacamos el usuario de los argumentos
+        user = kwargs.pop('user')  
         super(servicesForm, self).__init__(*args, **kwargs)
 
         self.fields['vehicle'].queryset = Vehicles.objects.filter(user=user)
@@ -40,7 +40,7 @@ class billingForm(forms.ModelForm):
         fields = ['vehicle', 'owner', 'description', 'entry_date','departure_date', 'final_price', 'status']
 
     def __init__(self, *args, **kwargs):
-        user = kwargs.pop('user')  # Sacamos el usuario de los argumentos
+        user = kwargs.pop('user')  
         super(billingForm, self).__init__(*args, **kwargs)
 
         self.fields['vehicle'].queryset = Vehicles.objects.filter(user=user)

@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +8,7 @@
     <title>FixGarage</title>
     <link rel="shortcut icon" href="../static/FixGarageIcon.png">
     <link rel="stylesheet" href="../static/styles/signin_style.css">
-
-    <!-- Descargar las Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <!-- Descargar las Fuentes -->
+    <script src="/static/scripts/scripts.js"></script>
 
 </head>
 
@@ -29,34 +23,30 @@
                 <form class="loginUser" method="POST" action="">
                     {% csrf_token %}
 
-                    <label for="id_username">Username:</label><br><br>
-                    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" required
-                        id="id_username"><br><br>
+                    <label for="id_username">{% trans "Username:" %}</label><br><br>
+                    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" required id="id_username"><br><br>
 
-                    <label for="id_password">Password:<a href="/signin" id="resetpassword-a">Forgot
-                            password?</a></label><br><br>
-                    <input type="password" name="password" autocomplete="current-password" required
-                        id="id_password">  <button class="btn-primary" type="button" onclick="mostrarContrasena()">👁️‍🗨️</button><br><br>
+                    <label for="id_password">{% trans "Password:" %}<a href="/signin" id="resetpassword-a">{% trans "Forgot password?" %}</a></label><br><br>
+                    <input type="password" name="password" autocomplete="current-password" required id="id_password">
 
-                        {{error}}<br><br>
+                    <button id="btn-showpassword" type="button">👁️‍🗨️</button><br><br>
 
-                    <button class="btn-signin">Sign in</button><br>
+                    {{error}}<br><br>
+
+                    <button class="btn-signin" type="submit">Sign in</button><br>
 
                 </form>
 
-                <p>New to FixGarage? <a href="/register" id="register-a">Create an account</a></p>
+                <p>{% trans "New to FixGarage?" %}<a href="/register" id="register-a">{% trans "Create an account" %}</a></p>
 
             </div>
             <div class="info">
-                <h1>Welcome to FixGarage</h1>
+                <h1>{% trans "Welcome to FixGarage" %}</h1>
+                <p>{% trans "FixGarage is an application designed for workshop management, allowing you to have greater control over your services, customers, and billing." %}</p><br>
+                <h2>{% trans "First time using FixGarage?" %}</h2>
+                <h3>{% trans "Don’t you want to create an account?" %}</h3>
                 <p>
-                    FixGarage is an application designed for workshop management,
-                    allowing you to have greater control over your services, customers, and billing.
-                </p><br>
-                <h2>First time using FixGarage?</h2>
-                <h3>Don’t you want to create an account?</h3>
-                <p>
-                    Try using the pre-created credentials:<br><br>
+                    {% trans "Try using the pre-created credentials:" %}<br><br>
                     <b>Username:</b> &nbsp;JhonDoe<br>
                     <b>Password:</b> &nbsp;&nbsp;JhonDoe123<br>
 
