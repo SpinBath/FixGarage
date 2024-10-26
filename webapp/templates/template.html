@@ -1,0 +1,54 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixGarage</title>
+    <link rel="shortcut icon" href="/static/images/FixGarageIcon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/static/styles/hud_style.css">
+    <script src="/static/scripts/scripts.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="menu" class="collapsed">
+            <div class="header">
+                <a class="menu_title" href="/">
+                    <h1>FIX GARAGE</h1>
+                </a>
+            </div>
+            <nav class="buttons">
+                <ul>
+                    <li><a href="/clients"><button>{% trans "Clients" %}</button></a></li>
+                    <li><a href="/vehicles"><button>{% trans "Vehicles" %}</button></a></li>
+                    <li><a href="/services"><button>{% trans "Services" %}</button></a></li>
+                    <li><a href="/billing"><button>{% trans "Billing" %}</button></a></li>
+                </ul>
+            </nav>
+            <div class="footer">
+                <a href="/logout"><button>Logout</button></a>
+            </div>
+        </div>
+        <div id="desplegable">
+            <button id="button-show-menu">Show Menu</button>
+        </div>
+        <div id="contenido">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </div>
+    
+</body>
+
+</html>

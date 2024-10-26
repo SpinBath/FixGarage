@@ -1,0 +1,72 @@
+{% extends "../template.html" %}
+{% load i18n %}
+{% block content %}
+<link rel="stylesheet" href="/static/styles/hud_style.css">
+<link rel="stylesheet" href="../static/styles/clients.css">
+
+<script src="../static/scripts/clients.js"></script>
+
+<div class="tableTitle">
+    <h1>{% trans "Billing List" %}</h1>
+</div>
+<div id="buscador">
+    <input type="text">
+</div>
+<table id="tableBilling">
+    <thead>
+        <tr>
+            <th>{% trans "Vehicle" %}</th>
+            <th>{% trans "Owner" %}</th>
+            <th>{% trans "Description" %}</th>
+            <th>{% trans "Cost" %}</th>
+            <th>{% trans "Pagado" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for billing in billing %}
+        <tr>
+            <td>{{ billing.vehicle }}</td>
+            <td>{{ billing.owner }}</td>
+            <td>{{ billing.description }}</td>
+            <td>{{ billing.final_price }}</td>
+            <td>{{ billing.status }}</td>
+            <td>
+                <a href="/billing/update/{{ billing.id }}">✏️</a>
+                <a href="/billing/delete/{{ billing.id }}">🗑️</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form class="billingForm" method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name="save">{% trans "Save" %}</button>
+</form>
+<div class="optionsButtons">
+    <button id="ListBillingButton">{% trans "Billing List" %}</button>
+</div>
+
+<script>
+
+    const context = JSON.parse('{{ context_json|escapejs }}');
+    console.log(context);
+
+    const vehiculoSelect = document.getElementById('id_vehicle');
+    const ownerSelect = document.getElementById('id_owner');
+    const description = document.getElementById('id_description');
+    const entry_date = document.getElementById('id_entry_date');
+    const departure_date = document.getElementById('id_departure_date');
+    const final_price = document.getElementById('id_final_price');
+
+    vehiculoSelect.value = context.vehicle
+    ownerSelect.value = context.owner
+    description.value = context.description
+    entry_date.value = context.entry_date
+    departure_date.value = context.departure_date
+    final_price.value = context.final_price
+
+</script>
+
+{% endblock %}

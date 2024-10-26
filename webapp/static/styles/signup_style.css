@@ -1,0 +1,153 @@
+*{
+    font-family: Poppins;
+}
+
+body{
+    margin: 0px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.title{
+    background-color: #201E43;
+    color: #ffffff;
+    padding-left: 40px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3%;
+}
+
+.footer{
+    background-color: #201E43;
+    height: 25px;
+}
+
+.title h1{
+    font-size: 50px;
+    margin-left: 15%
+}
+
+.form{
+    color: #201E43;
+    font-weight: 580;
+    margin-left: 35%;
+    margin-top: 50px;
+    position: relative;
+
+}
+
+label, input{
+    width: 100%;
+}
+
+input{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #201E43;
+    font-size: large;
+}
+
+#id_password1, #id_password2{
+    width: 90%;
+}
+
+.btn-signin{
+    background-color: #201E43;
+    color: white;
+    height: 50px;
+    width: 100%;
+}
+
+.btn-primary{
+    position: absolute;
+    left: 93%;
+    background-color: #201E43;
+    float: right;
+    margin-right: 10%;
+    height: 30px;
+    width: 30px;
+}
+
+button{
+    background-color: #201E43;
+    color: white;
+    height: 50px;
+    width: 100%;
+}
+
+#resetpassword-a{
+    float: right;
+    margin-right: 10%;
+}
+
+.form p{
+    width: 100%;
+    text-align: center;
+}
+#register-a{
+    margin-left: 10px;
+}
+
+.info{
+    text-align: justify;
+    margin-right: 35%;
+    padding-left: 5%;
+}
+
+.info img{
+    min-width: 100%;
+    margin-left: 20%;
+}
+
+.info h2, h3{
+    margin: 0px;
+}
+
+.footer {
+    background-color: #201E43;
+    height: 25px;
+}
+
+@media only screen and (max-device-width : 1000px) {
+    /* Styles */
+
+    .content {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: auto auto;
+        align-items: center;
+    }
+
+    .form{
+        width: 82%;
+        margin: auto;
+    }
+
+    .title {
+        background-color: #201E43;
+        color: #ffffff;
+        padding: 0;
+        margin-bottom: 50px;
+    }
+
+    .title h1 {
+        font-size: 50px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    
+    .info{
+        display: none;
+    }
+
+
+}

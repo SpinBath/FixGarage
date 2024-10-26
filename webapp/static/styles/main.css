@@ -1,0 +1,182 @@
+
+
+/* General */
+
+#contenido {
+    background-image: none;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+#contenido a{
+    text-decoration: none;
+}
+
+/* Div Titulo */
+
+.div-generalTitle {
+    margin-left: 6%;
+    margin-right: 6%;
+    font-size: 20px;
+    border-bottom: 2px solid #201E43;
+}
+
+
+/* Div Buscador */
+
+#div-searchEngine {
+    margin-left: 6%;
+    
+}
+
+
+#form-searchEngine {
+    border: #201E43 solid 2px;
+    width: 90%;
+    position: relative;
+
+}
+
+#form-searchEngine input {
+    width: 80%;
+    padding-left: 23px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 540;
+    font-size: 15px;
+    outline: none;
+    border: none;
+}
+
+#form-searchEngine button {
+    border: none;
+    background-color: white;
+    color: #201E43;
+    font-size: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    float: right;
+    position: absolute;
+    right: 0px;
+}
+
+#form-searchEngine button:hover {
+    font-weight: bolder;
+}
+
+#div-contenido{
+    height: 100%;
+}
+
+/* Div TablaClientes */
+
+#div-generalTable {
+    margin-top: 3%;
+    margin-left: 6%;
+    margin-right: 3%;
+    margin-bottom: 50px;
+    height: 75%;
+    width: 86%;
+}
+
+
+table {
+    width: 98%;
+    border-collapse: collapse;
+}
+
+td {
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 20px;
+
+}
+
+th,
+td {
+    border-left: solid 2px #201E43;
+}
+
+tbody tr:hover {
+    background-color: #201E43;
+    color: white;
+}
+
+
+
+/* Footer */
+
+footer {
+    background-color: #201E43;
+}
+
+footer button {
+    border-radius: 30px;
+    float: right;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: large;
+    color: white;
+    background-color: #201E43;
+    border: none;
+    font-weight: bold;
+ 
+}
+
+footer button:hover {
+    font-size: x-large;
+}
+
+
+@media only screen and (max-device-width : 1020px) {
+
+    /* #menu{
+        display: grid;
+    } */
+
+    #contenido {
+        background-image: grid;
+        grid-template-rows: auto 1fr;
+        display: grid;
+    }
+
+    #div-searchEngine {
+
+        margin-right: 6%;
+    }
+    #form-searchEngine {
+        border: #201E43 solid 2px;
+        width: 90%;
+        position: relative;
+    }
+
+    #form-searchEngine{
+        padding-right:15px;
+        padding-left: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #form-searchEngine input {
+        width: 90%;
+        padding: 0;
+   
+    }
+
+    #form-searchEngine button {
+
+        border: none;
+        background-color: white;
+        color: #201E43;
+        font-size: 20px;
+        padding: 0;
+        position: absolute;
+        right: 10px;
+        bottom:  2px;
+    }
+    
+}

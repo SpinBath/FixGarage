@@ -1,0 +1,15 @@
+
+#contenido{
+    background-image: url('../images/FixGarageIcon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+@media only screen and (max-device-width : 500px) {
+    
+    #contenido{
+        background-size: contain;
+    }
+
+}

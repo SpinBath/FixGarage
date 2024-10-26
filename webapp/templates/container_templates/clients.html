@@ -1,0 +1,82 @@
+{% extends "../template.html" %}
+{% load i18n %}
+{% block content %}
+
+<!-- Links  -->
+
+
+<link rel="stylesheet" href="/static/styles/main.css">
+<link rel="stylesheet" href="/static/styles/clients.css">
+
+{% if is_update %}
+<link rel="stylesheet" href="/static/styles/main_update.css">{% endif %}
+
+
+<!-- Links  -->
+
+<div class="div-generalTitle">
+    <h1>{% if is_update %}{% trans "Edit Client" %}{% else %}{% trans "Customer List" %}{% endif %}</h1>
+</div>
+
+
+    <div id="div-contenido">
+        <div id="div-searchEngine" {% if is_update %} style="visibility: hidden;" {% else %} style="visibility: visible" {% endif %}>
+            <h3>{% trans "Search by" %}</h3>
+
+            <form id="form-searchEngine" method="GET" action="">
+                <input type="text" name="q" placeholder="Name, Address, Phone, Email" value="{{ query }}">
+                <button type="submit">{% trans "🔎" %}</button>
+            </form>
+
+        </div>
+
+
+        <div id="div-generalTable" {% if is_update %} style="display: none;" {% else %} style="display: block;" {% endif %}>
+
+            <table id="table-clientsList">
+                <thead>
+                    <tr>
+                        <th id="clientsList-th-name">{% trans "Name" %}</th>
+                        <th id="clientsList-th-address">{% trans "Address" %}</th>
+                        <th id="clientsList-th-phone">{% trans "Phone" %}</th>
+                        <th id="clientsList-th-email">{% trans "Email" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                    <tr>
+                        <td id="clientsList-td-name">{{ client.name }}</td>
+                        <td id="clientsList-td-address">{{ client.address }}</td>
+                        <td id="clientsList-td-phone">{{ client.phone }}</td>
+                        <td id="clientsList-td-email">{{ client.email }}</td>
+                        <td id="clientsList-td-options">
+                            <a href="/clients/update/{{ client.id }}">✏️</a>
+                            <a href="/clients/delete/{{ client.id }}">🗑️</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    
+
+    <form id="form-clients" method="POST" action="" {% if is_update %} style="display: block;" {% else %}
+        style="display: none;" {% endif %}>
+        {% csrf_token %}
+        {{form.as_p}}
+        <p id="p-saveButton-form">
+            <button name="save">{% trans "Save" %}</button>
+        </p>
+    </form>
+    </div>
+
+<footer>
+    {% if is_update %}
+    <a href="/clients"><button id="button-GoBack">{% trans "Back" %}</button></a>
+    {% else %}
+    <button id="Button-addObject-footer">{% trans "Add Clients" %}</button>
+    {% endif %}
+</footer>
+
+{% endblock %}

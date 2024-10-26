@@ -1,0 +1,80 @@
+{% extends "../template.html" %}
+{% load i18n %}
+{% block content %}
+
+<link rel="stylesheet" href="/static/styles/hud_style.css">
+<link rel="stylesheet" href="../static/styles/clients.css">
+
+<script src="../static/scripts/clients.js"></script>
+
+<div class="tableTitle">
+    <h1>{% trans "Service List" %}</h1>
+</div>
+<div id="buscador">
+    <input type="text">
+</div>
+<table id="tableServices">
+    <thead>
+        <tr>
+            <th>{% trans "Vehicle" %}</th>
+            <th>{% trans "Owner" %}</th>
+            <th>{% trans "description" %}</th>
+            <th>{% trans "entry_date" %}</th>
+            <th>{% trans "departure_date" %}</th>
+            <th>{% trans "price" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for service in services %}
+        <tr>
+            <td>{{ service.vehicle }}</td>
+            <td>{{ service.owner }}</td>
+            <td>{{ service.description }}</td>
+            <td>{{ service.entry_date }}</td>
+            <td>{{ service.departure_date }}</td>
+            <td>{{ service.price }}</td>
+            <td>
+                <a href="/services/update/{{ service.id }}">✏️</a>
+                <a href="/services/delete/{{ service.id }}">🗑️</a>
+                <a href="/billing/{{ service.id }}">📋</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form class="servicesForm" method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name="save">{% trans "Save" %}</button>
+</form>
+<div class="optionsButtons">
+    <button id="ListServiceButton">{% trans "Service List" %}</button>
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const vehiculoSelect = document.getElementById('id_vehicle');
+        const ownerSelect = document.getElementById('id_owner');
+        const $select = document.querySelector('#id_owner')
+
+        vehiculoSelect.addEventListener('change', function () {
+            const selectedUUID = vehiculoSelect.value;
+            if (selectedUUID) {
+                fetch('get_owner/' + selectedUUID)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data.owner)
+                        $select.value = data.owner
+                    })
+            } else {
+                $select.value = ""
+            }
+        });
+    });
+
+</script>
+
+{% endblock %}
+

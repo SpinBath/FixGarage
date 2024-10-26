@@ -1,0 +1,97 @@
+/* custom th */
+
+#clientsList-th-email {
+    border-right: solid 2px #201E43;
+}
+
+
+#clientsList-th-name {
+    min-width: 250px;
+
+}
+
+#clientsList-th-address {
+    min-width: 300px;
+
+}
+
+#clientsList-th-phone {
+    min-width: auto;
+
+}
+
+#clientsList-th-email {
+    min-width: auto;
+
+}
+
+
+
+/* custom td */
+
+#clientsList-td-email {
+    border-right: solid 2px #201E43;
+}
+
+#clientsList-td-phone {
+    text-align: center;
+}
+
+#clientsList-td-options {
+    border-left: none;
+    text-align: center;
+    padding-right: 25px;
+    min-width: 50px;
+}
+
+
+
+
+
+/* Div FormularioClientes */
+
+#form-clients {
+    display: none;
+    overflow: hidden;
+    margin: auto;
+    margin-top: -60px;
+    width: 60%;
+}
+
+
+#form-clients label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+}
+
+#form-clients input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #201E43;
+    font-size: medium;
+    padding-left: 10px;
+    width: 100%;
+
+}
+
+#p-saveButton-form {
+    text-align: right;
+}
+
+#form-clients button {
+    background-color: white;
+    border-radius: 30px;
+    border: #201E43 2px solid;
+    color: #201E43;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 25%;
+}
+
+#form-clients button:hover {
+    background-color: #201E43;
+    color: white;
+
+}
