@@ -128,4 +128,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('Button-addObject-footer').addEventListener('click', function () {
+        var div = document.getElementById('form-services');
+        var divtabla = document.getElementById('div-generalTable');
+        var divbuscador = document.getElementById('div-searchEngine');
+        var button = document.getElementById('Button-addObject-footer');
 
+        if (divtabla.style.display === 'block') {
+
+
+            div.style.display = 'block';
+            divtabla.style.display = 'none'
+            divbuscador.style.visibility = 'hidden'
+            button.innerHTML = "Back"
+
+        } else {
+
+            div.style.display = 'none';
+            divtabla.style.display = 'block'
+            divbuscador.style.visibility = 'visible'
+            button.innerHTML = "Add Services"
+
+        }
+    });
+});

@@ -1,55 +1,58 @@
 
 
-
 /* custom th */
 
-table{
-    width: 100%;
+#vehiclesList-th-licenseplate {
+    border-right: solid 2px #201E43;
 }
 
-td{
-    text-align: center;
-    padding-left: 0%;
+
+#vehiclesList-th-owner {
+    min-width: 300px;
+
+}
+
+#vehiclesList-th-brand {
+    min-width: 150px;
+
+}
+
+#vehiclesList-th-model {
+    min-width: 200px;
+
+}
+
+#vehiclesList-th-year {
+    min-width: 100px;
 
 }
 
 #vehiclesList-th-licenseplate {
     border-right: solid 2px #201E43;
-    width: 15%;
+    min-width: 200px;
 }
 
-#vehiclesList-th-brand{
-    width: 15%;
-}
-#vehiclesList-th-model{
-    width: 20%;
-}
-#vehiclesList-th-year{
-    width: 10%;
-}
-#vehiclesList-th-licenseplate{
-    width: 15%;
-}
+
 
 
 
 /* custom td */
 
-#vehiclesList-td-owner {
-    text-align: left;
-    padding-left: 20px;
 
+#vehiclesList-td-year {
+    text-align: center;
 }
 
 #vehiclesList-td-licenseplate {
     border-right: solid 2px #201E43;
-
+    text-align: center;
 }
 
 #vehiclesList-td-options {
-    width: 10%;
     border-left: none;
+    text-align: center;
     padding-right: 25px;
+    min-width: 50px;
 }
 
 
@@ -62,7 +65,7 @@ td{
     display: none;
     overflow: hidden;
     margin: auto;
-    margin-top: -3%;
+    margin-top: -60px;
     width: 60%;
 }
 
@@ -72,14 +75,6 @@ td{
     font-weight: bold;
     margin-bottom: 8px;
 
-}
-
-#form-vehicles select {
-    width: 50%;
-}
-
-#form-vehicles option {
-    height: 10px;
 }
 
 #form-vehicles input {
@@ -111,5 +106,4 @@ td{
     color: white;
 
 }
-
 

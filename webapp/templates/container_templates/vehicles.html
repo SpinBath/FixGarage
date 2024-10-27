@@ -20,57 +20,58 @@
 </div>
 
 
-<div id="div-searchEngine" {% if is_update %} style="visibility: hidden;" {% else %} style="visibility: visible" {% endif %}>
-    <h3>{% trans "Search by" %}</h3>
+<div id="div-contenido">
+    <div id="div-searchEngine" {% if is_update %} style="visibility: hidden;" {% else %} style="visibility: visible" {% endif %}>
+        <h3>{% trans "Search by" %}</h3>
 
-    <form id="form-searchEngine" method="GET" action="">
-        <input type="text" name="q" placeholder="Owner, Brand, Model, Year, License Plate" value="{{ query }}">
-        <button type="submit">{% trans "🔎" %}</button>
+        <form id="form-searchEngine" method="GET" action="">
+            <input type="text" name="q" placeholder="Onwer, Brand, Model, Year, License Plate" value="{{ query }}">
+            <button type="submit">{% trans "🔎" %}</button>
+        </form>
+
+    </div>
+
+
+    <div id="div-generalTable" {% if is_update %} style="display: none;" {% else %} style="display: block;" {% endif %}>
+
+        <table id="table-vehiclesList">
+            <thead>
+                <tr>
+                    <th id="vehiclesList-th-owner">{% trans "Owner" %}</th>
+                    <th id="vehiclesList-th-brand">{% trans "Brand" %}</th>
+                    <th id="vehiclesList-th-model">{% trans "Model" %}</th>
+                    <th id="vehiclesList-th-year">{% trans "Year" %}</th>
+                    <th id="vehiclesList-th-licenseplate">{% trans "License Plate" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vehicle in vehicles %}
+                <tr>
+                    <td id="vehiclesList-td-owner">{{ vehicle.owner }}</td>
+                    <td id="vehiclesList-td-brand">{{ vehicle.brand }}</td>
+                    <td id="vehiclesList-td-model">{{ vehicle.model }}</td>
+                    <td id="vehiclesList-td-year">{{ vehicle.year }}</td>
+                    <td id="vehiclesList-td-licenseplate">{{ vehicle.license_plate }}</td>
+                    <td id="vehiclesList-td-options">
+                        <a href="/vehicles/update/{{ vehicle.id }}">✏️</a>
+                        <a href="/vehicles/delete/{{ vehicle.id }}">🗑️</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <form id="form-vehicles" method="POST" action="" {% if is_update %} style="display: block;" {% else %}
+        style="display: none;" {% endif %}>
+        {% csrf_token %}
+        {{form.as_p}}
+        <p id="p-saveButton-form">
+            <button name="save">{% trans "Save" %}</button>
+        </p>
     </form>
-
 </div>
-
-
-<div id="div-generalTable" {% if is_update %} style="display: none;" {% else %} style="display: block;" {% endif %}>
-
-    <table id="table-vehiclesList">
-        <thead>
-            <tr>
-                <th id="vehiclesList-th-owner">{% trans "Owner" %}</th>
-                <th id="vehiclesList-th-brand">{% trans "Brand" %}</th>
-                <th id="vehiclesList-th-model">{% trans "Model" %}</th>
-                <th id="vehiclesList-th-year">{% trans "Year" %}</th>
-                <th id="vehiclesList-th-licenseplate">{% trans "License Plate" %}</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for vehicle in vehicles %}
-            <tr>
-                <td id="vehiclesList-td-owner">{{ vehicle.owner }}</td>
-                <td id="vehiclesList-td-brand">{{ vehicle.brand }}</td>
-                <td id="vehiclesList-td-model">{{ vehicle.model }}</td>
-                <td id="vehiclesList-td-year">{{ vehicle.year }}</td>
-                <td id="vehiclesList-td-licenseplate">{{ vehicle.license_plate }}</td>
-                <td id="vehiclesList-td-options">
-                    <a href="/vehicles/update/{{ vehicle.id }}">✏️</a>
-                    <a href="/vehicles/delete/{{ vehicle.id }}">🗑️</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-
-
-<form id="form-vehicles" method="POST" action="" {% if is_update %} style="display: block;" {% else %}
-    style="display: none;" {% endif %}>
-    {% csrf_token %}
-    {{form.as_p}}
-    <p id="p-saveButton-form">
-        <button name="save">{% trans "Save" %}</button>
-    </p>
-</form>
-
 
 <footer>
     {% if is_update %}

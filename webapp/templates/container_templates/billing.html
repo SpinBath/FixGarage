@@ -1,10 +1,18 @@
 {% extends "../template.html" %}
 {% load i18n %}
 {% block content %}
+
+<!-- Links  -->
 <link rel="stylesheet" href="/static/styles/hud_style.css">
-<link rel="stylesheet" href="../static/styles/clients.css">
+<link rel="stylesheet" href="../static/styles/billing.css">
 
 <script src="../static/scripts/clients.js"></script>
+
+{% if is_update %}
+<link rel="stylesheet" href="/static/styles/main_update.css">
+{% endif %}
+
+<!-- Links  -->
 
 <div class="tableTitle">
     <h1>{% trans "Billing List" %}</h1>

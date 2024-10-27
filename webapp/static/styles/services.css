@@ -46,7 +46,7 @@
 
 /* Div FormularioClientes */
 
-#form-clients {
+#form-services {
     display: none;
     overflow: hidden;
     margin: auto;
@@ -55,14 +55,14 @@
 }
 
 
-#form-clients label {
+#form-services label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
 
 }
 
-#form-clients input {
+#form-services input {
     border: none;
     outline: none;
     border-bottom: 1px solid #201E43;
@@ -76,7 +76,7 @@
     text-align: right;
 }
 
-#form-clients button {
+#form-services button {
     background-color: white;
     border-radius: 30px;
     border: #201E43 2px solid;
@@ -86,7 +86,7 @@
     width: 25%;
 }
 
-#form-clients button:hover {
+#form-services button:hover {
     background-color: #201E43;
     color: white;
 

@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="/static/styles/clients.css">
 
 {% if is_update %}
-<link rel="stylesheet" href="/static/styles/main_update.css">{% endif %}
+<link rel="stylesheet" href="/static/styles/main_update.css">
+{% endif %}
 
 
 <!-- Links  -->
@@ -20,6 +21,7 @@
 
 
     <div id="div-contenido">
+
         <div id="div-searchEngine" {% if is_update %} style="visibility: hidden;" {% else %} style="visibility: visible" {% endif %}>
             <h3>{% trans "Search by" %}</h3>
 
@@ -61,14 +63,13 @@
         </div>
     
 
-    <form id="form-clients" method="POST" action="" {% if is_update %} style="display: block;" {% else %}
-        style="display: none;" {% endif %}>
-        {% csrf_token %}
-        {{form.as_p}}
-        <p id="p-saveButton-form">
-            <button name="save">{% trans "Save" %}</button>
-        </p>
-    </form>
+        <form id="form-clients" method="POST" action="" {% if is_update %} style="display: block;" {% else %} style="display: none;" {% endif %}>
+            {% csrf_token %}
+            {{form.as_p}}
+            <p id="p-saveButton-form">
+                <button name="save">{% trans "Save" %}</button>
+            </p>
+        </form>
     </div>
 
 <footer>

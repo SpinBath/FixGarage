@@ -2,57 +2,93 @@
 {% load i18n %}
 {% block content %}
 
-<link rel="stylesheet" href="/static/styles/hud_style.css">
-<link rel="stylesheet" href="../static/styles/clients.css">
+<!-- Links  -->
 
-<script src="../static/scripts/clients.js"></script>
 
-<div class="tableTitle">
-    <h1>{% trans "Service List" %}</h1>
-</div>
-<div id="buscador">
-    <input type="text">
-</div>
-<table id="tableServices">
-    <thead>
-        <tr>
-            <th>{% trans "Vehicle" %}</th>
-            <th>{% trans "Owner" %}</th>
-            <th>{% trans "description" %}</th>
-            <th>{% trans "entry_date" %}</th>
-            <th>{% trans "departure_date" %}</th>
-            <th>{% trans "price" %}</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for service in services %}
-        <tr>
-            <td>{{ service.vehicle }}</td>
-            <td>{{ service.owner }}</td>
-            <td>{{ service.description }}</td>
-            <td>{{ service.entry_date }}</td>
-            <td>{{ service.departure_date }}</td>
-            <td>{{ service.price }}</td>
-            <td>
-                <a href="/services/update/{{ service.id }}">✏️</a>
-                <a href="/services/delete/{{ service.id }}">🗑️</a>
-                <a href="/billing/{{ service.id }}">📋</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<link rel="stylesheet" href="/static/styles/main.css">
+<link rel="stylesheet" href="/static/styles/services.css">
 
-<form class="servicesForm" method="POST" action="">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button name="save">{% trans "Save" %}</button>
-</form>
-<div class="optionsButtons">
-    <button id="ListServiceButton">{% trans "Service List" %}</button>
+{% if is_update %}
+<link rel="stylesheet" href="/static/styles/main_update.css">
+{% endif %}
+
+
+<!-- Links  -->
+
+<div class="div-generalTitle">
+    <h1>{% if is_update %}{% trans "Edit Service" %}{% else %}{% trans "Services List" %}{% endif %}</h1>
 </div>
 
-<script>
+
+    <div id="div-contenido">
+
+        <div id="div-searchEngine" {% if is_update %} style="visibility: hidden;" {% else %} style="visibility: visible" {% endif %}>
+            <h3>{% trans "Search by" %}</h3>
+
+            <form id="form-searchEngine" method="GET" action="">
+                <input type="text" name="q" placeholder="Name, Address, Phone, Email" value="{{ query }}">
+                <button type="submit">{% trans "🔎" %}</button>
+            </form>
+
+        </div>
+
+        <div id="div-generalTable" {% if is_update %} style="display: none;" {% else %} style="display: block;" {% endif %}>
+
+            <table id="tableServices">
+                <thead>
+                    <tr>
+                        <th id="servicesList-th-vehicle">{% trans "Vehicle" %}</th>
+                        <th id="servicesList-th-owner">{% trans "Owner" %}</th>
+                        <th id="servicesList-th-description">{% trans "description" %}</th>
+                        <th id="servicesList-th-entrydate">{% trans "entry_date" %}</th>
+                        <th id="servicesList-th-departuredate">{% trans "departure_date" %}</th>
+                        <th id="servicesList-th-price">{% trans "price" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for service in services %}
+                    <tr>
+                        <td id="servicesList-td-vehicle">{{ service.vehicle }}</td>
+                        <td id="servicesList-td-owner">{{ service.owner }}</td>
+                        <td id="servicesList-td-description">{{ service.description }}</td>
+                        <td id="servicesList-td-entrydate">{{ service.entry_date }}</td>
+                        <td id="servicesList-td-departuredate">{{ service.departure_date }}</td>
+                        <td id="servicesList-td-price">{{ service.price }}</td>
+                        <td>
+                            <a href="/services/update/{{ service.id }}">✏️</a>
+                            <a href="/services/delete/{{ service.id }}">🗑️</a>
+                            <a href="/billing/{{ service.id }}">📋</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+        <form id="form-services" method="POST" action="" {% if is_update %} style="display: block;" {% else %} style="display: none;" {% endif %}>
+            {% csrf_token %}
+            {{form.as_p}}
+            <p id="p-saveButton-form">
+                <button name="save">{% trans "Save" %}</button>
+            </p>
+        </form>
+
+    </div>
+
+<footer>
+    {% if is_update %}
+    <a href="/services"><button id="button-GoBack">{% trans "Back" %}</button></a>
+    {% else %}
+    <button id="Button-addObject-footer">{% trans "Add Services" %}</button>
+    {% endif %}
+</footer>
+
+
+
+
+
+<!-- <script>
 
     document.addEventListener('DOMContentLoaded', function () {
         const vehiculoSelect = document.getElementById('id_vehicle');
@@ -74,7 +110,7 @@
         });
     });
 
-</script>
+</script> -->
 
 {% endblock %}
 
