@@ -1,46 +1,62 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* custom th */
 
 
-#clientsList-th-name {
+#servicesList-th-owner {
     min-width: 250px;
-
 }
 
-#clientsList-th-address {
-    min-width: 300px;
-
+#servicesList-th-vehicle {
+    min-width: 250px;
 }
 
-#clientsList-th-phone {
+#servicesList-th-description {
     min-width: 150px;
-
 }
 
-#clientsList-th-email {
+#servicesList-th-date {
+    min-width: 150px;
+}
+
+#servicesList-th-price{
+    min-width: 100px;
+}
+
+#servicesList-th-price {
     border-right: solid 2px #201E43;
-    min-width: 200px;
+    min-width: 150px;
 }
-
 
 
 /* custom td */
 
-#clientsList-td-email {
+#servicesList-td-price {
     border-right: solid 2px #201E43;
 }
 
-#clientsList-td-phone {
+#servicesList-td-description, #servicesList-td-date, #servicesList-td-price {
     text-align: center;
 }
 
-#clientsList-td-options {
+#servicesList-td-options {
     border-left: none;
     text-align: center;
     padding-right: 25px;
-    min-width: 50px;
+    min-width: 80px;
 }
-
-
 
 
 
@@ -48,10 +64,11 @@
 
 #form-services {
     display: none;
-    overflow: hidden;
+    overflow: scroll;
     margin: auto;
     margin-top: -60px;
-    width: 60%;
+    height: 90%;
+    width: 70%;
 }
 
 
@@ -62,18 +79,23 @@
 
 }
 
-#form-services input {
+#form-services textarea{
+    width: 90%;
+}
+#form-services input, select {
     border: none;
     outline: none;
     border-bottom: 1px solid #201E43;
     font-size: medium;
     padding-left: 10px;
-    width: 100%;
+    width: 90%;
 
 }
 
 #p-saveButton-form {
+    margin-right: 8%;
     text-align: right;
+
 }
 
 #form-services button {
@@ -84,10 +106,40 @@
     font-weight: bold;
     margin-top: 20px;
     width: 25%;
+    min-width: 130px;
 }
 
 #form-services button:hover {
     background-color: #201E43;
     color: white;
 
+}
+
+
+#div-contenido{
+    position: relative;
+}
+
+#info-service{
+    visibility: hidden;
+    width: 100%;
+    min-width: 280px;
+    min-height: 280px;
+    position: absolute;
+    top: 150px;
+}
+
+#info-service #btn-showdata-show{
+   float: right;
+}
+
+#div-info-service{
+    border: #201E43 3px solid;
+    background-color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    min-width: 280px;
+    height: 170px;
+    background-color: white;
 }

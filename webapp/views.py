@@ -192,7 +192,7 @@ def updateservice(request, id):
             return redirect('/services')
     else:
         form = servicesForm(user=request.user, instance=service)
-    return render(request, 'container_templates/services.html', {'form': form})
+    return render(request, 'container_templates/services.html', {'form': form, 'is_update': True})
 
 
 
@@ -290,12 +290,6 @@ def updatebilling(request, id):
     else:
         form = billingForm(user=request.user, instance=billing)
     return render(request, 'container_templates/billing.html', {'form': form})
-
-
-
-
-
-
 
 
 

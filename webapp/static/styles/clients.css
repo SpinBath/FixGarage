@@ -48,10 +48,11 @@
 
 #form-clients {
     display: none;
-    overflow: hidden;
+    overflow: scroll;
     margin: auto;
     margin-top: -60px;
-    width: 60%;
+    height: 80%;
+    width: 70%;
 }
 
 
@@ -84,6 +85,8 @@
     font-weight: bold;
     margin-top: 20px;
     width: 25%;
+    min-width: 130px;
+
 }
 
 #form-clients button:hover {

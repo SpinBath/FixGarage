@@ -153,3 +153,63 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function showdata(value){
+
+    var resultado = value
+    var div = document.getElementById('info-service');
+    var p = document.getElementById('p-info-service');
+
+
+    if (div.style.visibility === 'hidden' | div.style.visibility === '') {
+
+        console.log(resultado)
+        div.style.visibility = 'visible'
+        p.innerHTML = resultado
+        
+    } else {
+
+        div.style.visibility = 'hidden'
+
+    }
+}
+
+/* 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('btn-showdata').addEventListener('click', function () {
+
+        var resultado = document.getElementById('btn-showdata').value;
+        var div = document.getElementById('info-service');
+        var p = document.getElementById('p-info-service');
+        console.log(resultado)
+
+        if (div.style.visibility === 'hidden' | div.style.visibility === '') {
+
+            div.style.visibility = 'visible'
+            p.innerHTML = resultado
+        } else {
+
+            div.style.visibility = 'hidden'
+
+        }
+
+    });
+});
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('btn-showdata-show').addEventListener('click', function () {
+
+        var div = document.getElementById('info-service');
+
+        if (div.style.visibility === 'hidden' | div.style.visibility === '') {
+
+            div.style.visibility = 'visible'
+
+        } else {
+
+            div.style.visibility = 'hidden'
+
+        }
+
+    });
+});

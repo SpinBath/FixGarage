@@ -40,8 +40,7 @@
                         <th id="servicesList-th-vehicle">{% trans "Vehicle" %}</th>
                         <th id="servicesList-th-owner">{% trans "Owner" %}</th>
                         <th id="servicesList-th-description">{% trans "description" %}</th>
-                        <th id="servicesList-th-entrydate">{% trans "entry_date" %}</th>
-                        <th id="servicesList-th-departuredate">{% trans "departure_date" %}</th>
+                        <th id="servicesList-th-date">{% trans "Dates" %}</th>
                         <th id="servicesList-th-price">{% trans "price" %}</th>
                     </tr>
                 </thead>
@@ -50,11 +49,13 @@
                     <tr>
                         <td id="servicesList-td-vehicle">{{ service.vehicle }}</td>
                         <td id="servicesList-td-owner">{{ service.owner }}</td>
-                        <td id="servicesList-td-description">{{ service.description }}</td>
-                        <td id="servicesList-td-entrydate">{{ service.entry_date }}</td>
-                        <td id="servicesList-td-departuredate">{{ service.departure_date }}</td>
+                        <td id="servicesList-td-description">
+                            <button id="btn-showdata" onclick="showdata(this.value)" value="{{ service.description }}">Show Data</button>
+                        </td>
+                        <td id="servicesList-td-date">{{ service.entry_date }}<br>{{ service.entry_date }}</td>
+                        
                         <td id="servicesList-td-price">{{ service.price }}</td>
-                        <td>
+                        <td id="servicesList-td-options">
                             <a href="/services/update/{{ service.id }}">✏️</a>
                             <a href="/services/delete/{{ service.id }}">🗑️</a>
                             <a href="/billing/{{ service.id }}">📋</a>
@@ -64,6 +65,14 @@
                 </tbody>
             </table>
 
+        </div>
+
+        <div id="info-service">
+            <div id="div-info-service"><button id="btn-showdata-show">X</button><br>
+                <p id="p-info-service">
+
+                </p>
+            </div>
         </div>
 
         <form id="form-services" method="POST" action="" {% if is_update %} style="display: block;" {% else %} style="display: none;" {% endif %}>
