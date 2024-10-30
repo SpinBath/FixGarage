@@ -153,7 +153,9 @@ def services(request):
     if request.method == 'GET':
         query = request.GET.get('q', '')
         if query:
-            services = Services.objects.filter(user=request.user).filter(Q(vehicle__icontains=query) | Q(owner__icontains=query) | Q(description__icontains=query) | Q(entry_date__icontains=query) | Q(departure_date__icontains=query) | Q(price__icontains=query))
+            if query:
+          
+                services = Services.objects.filter(user=request.user).filter(Q(vehicle__brand__icontains=query) | Q(vehicle__model__icontains=query) | Q(vehicle__license_plate__icontains=query) | Q(owner__name__icontains=query) | Q(description__icontains=query) | Q(entry_date__icontains=query) | Q(departure_date__icontains=query) | Q(price__icontains=query))
 
         else: 
             services = Services.objects.filter(user=request.user)
@@ -207,7 +209,7 @@ def billing(request):
         else: 
             billing = Billing.objects.filter(user=request.user)
         
-        return render(request, 'container_templates/billing.html', {'billing': billing, 'form': billingForm(user=request.user), 'query':query})
+        return render(request, 'container_templates/billing.html', {'billing': billing, 'form': billingForm(user=request.user), 'query':query, })
     else:
         vehicle_object=get_object_or_404(Vehicles, id=request.POST['vehicle'])
         owner_object=get_object_or_404(Clients, id=request.POST['owner'])
@@ -247,7 +249,7 @@ def make_billing(request, id):
             context = {'vehicle':vehicle ,'owner': owner , 'description':description , 'entry_date': entry_date, 'departure_date': departure_date, 'final_price': final_price}
 
 
-            return render(request, 'container_templates/billing.html', {'billing': billing, 'form': billingForm(user=request.user),'context_json': json.dumps(context)})
+            return render(request, 'container_templates/billing.html', {'billing': billing, 'form': billingForm(user=request.user),'context_json': json.dumps(context), 'is_update': True})
         except Services.DoesNotExist:
             return JsonResponse({'owner': ''}, status=404)
         
@@ -289,7 +291,7 @@ def updatebilling(request, id):
             return redirect('/billing')
     else:
         form = billingForm(user=request.user, instance=billing)
-    return render(request, 'container_templates/billing.html', {'form': form})
+    return render(request, 'container_templates/billing.html', {'form': form, 'is_update': True})
 
 
 

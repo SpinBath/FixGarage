@@ -14,7 +14,7 @@ class Clients(models.Model):
                 primary_key=True,
                 editable=False
         )
-        user = models.ForeignKey(User, on_delete=models.CASCADE)
+        user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
         name = models.CharField(max_length=100)
         address = models.CharField(max_length=200)
         phone = models.CharField(max_length=15)
@@ -31,8 +31,8 @@ class Vehicles(models.Model):
                 primary_key=True,
                 editable=False
         )
-        user = models.ForeignKey(User, on_delete=models.CASCADE)
-        owner = models.ForeignKey(Clients, on_delete=models.CASCADE)
+        user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+        owner = models.ForeignKey(Clients, on_delete=models.DO_NOTHING)
         brand = models.CharField(max_length=50)
         model = models.CharField(max_length=50)
         year = models.IntegerField()
@@ -50,9 +50,9 @@ class Services(models.Model):
                 primary_key=True,
                 editable=False
         )
-        user = models.ForeignKey(User, on_delete=models.CASCADE)
-        vehicle = models.ForeignKey(Vehicles, on_delete=models.CASCADE)
-        owner = models.ForeignKey(Clients, on_delete=models.CASCADE)
+        user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+        vehicle = models.ForeignKey(Vehicles, on_delete=models.DO_NOTHING)
+        owner = models.ForeignKey(Clients, on_delete=models.DO_NOTHING)
         description = models.TextField()
         entry_date = models.DateField()
         departure_date = models.DateField()
@@ -67,9 +67,9 @@ class Billing(models.Model):
                 primary_key=True,
                 editable=False
         )
-        user = models.ForeignKey(User, on_delete=models.CASCADE)
-        vehicle = models.ForeignKey(Vehicles, on_delete=models.CASCADE)
-        owner = models.ForeignKey(Clients, on_delete=models.CASCADE)
+        user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+        vehicle = models.ForeignKey(Vehicles, on_delete=models.DO_NOTHING)
+        owner = models.ForeignKey(Clients, on_delete=models.DO_NOTHING)
         description = models.TextField()
         entry_date = models.DateField()
         departure_date = models.DateField()

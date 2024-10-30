@@ -1,20 +1,3 @@
-/*  function checkScreenWidth() {
-    var div = document.getElementById('menu'); // Asegúrate de seleccionar correctamente tu div
-    var contenido = document.getElementById('contenido')
-
-    const screenWidth = window.innerWidth;
-
-    if (screenWidth > 1020) {
-        div.style.display = 'grid';
-        contenido.style.display = 'grid';
-    }else{
-        div.style.display = 'none';
-    }
-}
-
-window.addEventListener('resize', checkScreenWidth);
-
-window.addEventListener('DOMContentLoaded', checkScreenWidth);  */
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('btn-showpassword').addEventListener('click', function () {
@@ -73,6 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('Button-addObject-footer').addEventListener('click', function () {
 
@@ -81,7 +66,87 @@ document.addEventListener('DOMContentLoaded', function () {
         var divbuscador = document.getElementById('div-searchEngine');
         var button = document.getElementById('Button-addObject-footer');
 
-        if (divtabla.style.display === 'block') {
+        if (divtabla.style.display === 'block' | divtabla.style.display === '') {
+
+
+            div.style.display = 'block';
+            divtabla.style.display = 'none';
+            divbuscador.style.visibility = 'hidden';
+            button.innerHTML = "Back";
+
+        } else {
+
+            div.style.display = 'none';
+            divtabla.style.display = 'block';
+            divbuscador.style.visibility = 'visible';
+            button.innerHTML = "Add Vehicles";
+
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('Button-addObject-footer').addEventListener('click', function () {
+
+        var div = document.getElementById('form-vehicles');
+        var divtabla = document.getElementById('div-generalTable');
+        var divbuscador = document.getElementById('div-searchEngine');
+        var button = document.getElementById('Button-addObject-footer');
+
+        if (divtabla.style.display === 'block' | divtabla.style.display === '') {
+
+
+            div.style.display = 'block';
+            divtabla.style.display = 'none';
+            divbuscador.style.visibility = 'hidden';
+            button.innerHTML = "Back";
+
+        } else {
+
+            div.style.display = 'none';
+            divtabla.style.display = 'block';
+            divbuscador.style.visibility = 'visible';
+            button.innerHTML = "Add Vehicles";
+
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('Button-addObject-footer').addEventListener('click', function () {
+        var div = document.getElementById('form-services');
+        var divtabla = document.getElementById('div-generalTable');
+        var divbuscador = document.getElementById('div-searchEngine');
+        var button = document.getElementById('Button-addObject-footer');
+
+        if (divtabla.style.display === 'block' | divtabla.style.display === '') {
+
+
+            div.style.display = 'block';
+            divtabla.style.display = 'none';
+            divbuscador.style.visibility = 'hidden';
+            button.innerHTML = "Back";
+
+        } else {
+
+            div.style.display = 'none';
+            divtabla.style.display = 'block';
+            divbuscador.style.visibility = 'visible';
+            button.innerHTML = "Add Billing";
+
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('Button-addObject-footer').addEventListener('click', function () {
+
+        var div = document.getElementById('form-billing');
+        var divtabla = document.getElementById('div-generalTable');
+        var divbuscador = document.getElementById('div-searchEngine');
+        var button = document.getElementById('Button-addObject-footer');
+
+        if (divtabla.style.display === 'block' | divtabla.style.display === '') {
 
 
             div.style.display = 'block';
@@ -102,119 +167,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('Button-addObject-footer').addEventListener('click', function () {
-        var div = document.getElementById('form-vehicles');
-        var divtabla = document.getElementById('div-generalTable');
-        var divbuscador = document.getElementById('div-searchEngine');
-        var button = document.getElementById('Button-addObject-footer');
+function showdata_service(value) {
 
-        if (divtabla.style.display === 'block') {
+    var description_data = value
+    var div_info_service = document.getElementById('info-service');
+    var p_info_service = document.getElementById('p-info-service');
+    var div_background = document.getElementById('div-generalTable');
 
+    if (div_info_service.style.visibility === 'hidden' | div_info_service.style.visibility === '') {
 
-            div.style.display = 'block';
-            divtabla.style.display = 'none'
-            divbuscador.style.visibility = 'hidden'
-            button.innerHTML = "Back"
-
-        } else {
-
-            div.style.display = 'none';
-            divtabla.style.display = 'block'
-            divbuscador.style.visibility = 'visible'
-            button.innerHTML = "Add Vehicles"
-
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('Button-addObject-footer').addEventListener('click', function () {
-        var div = document.getElementById('form-services');
-        var divtabla = document.getElementById('div-generalTable');
-        var divbuscador = document.getElementById('div-searchEngine');
-        var button = document.getElementById('Button-addObject-footer');
-
-        if (divtabla.style.display === 'block') {
-
-
-            div.style.display = 'block';
-            divtabla.style.display = 'none'
-            divbuscador.style.visibility = 'hidden'
-            button.innerHTML = "Back"
-
-        } else {
-
-            div.style.display = 'none';
-            divtabla.style.display = 'block'
-            divbuscador.style.visibility = 'visible'
-            button.innerHTML = "Add Services"
-
-        }
-    });
-});
-
-function showdata(value) {
-
-    var resultado = value
-    var div = document.getElementById('info-service');
-    var p = document.getElementById('p-info-service');
-    var cont = document.getElementById('div-generalTable')
-
-
-    if (div.style.visibility === 'hidden' | div.style.visibility === '') {
-
-        console.log(resultado)
-        div.style.visibility = 'visible'
-        p.innerHTML = resultado
-        cont.style.filter= 'blur(2px)'
+        div_info_service.style.visibility = 'visible'
+        p_info_service.innerHTML = description_data
+        div_background.style.filter = 'blur(2px)'
 
     } else {
 
-        div.style.visibility = 'hidden'
-        cont.style.filter= 'blur(0px)'
+        div_info_service.style.visibility = 'hidden'
+        p_info_service.innerHTML = description_data
+        div_background.style.filter = 'blur(0px)'
     }
 }
 
-/* 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('btn-showdata').addEventListener('click', function () {
+function showdata_billing(value) {
 
-        var resultado = document.getElementById('btn-showdata').value;
-        var div = document.getElementById('info-service');
-        var p = document.getElementById('p-info-service');
-        console.log(resultado)
+    var description_data = value
+    var div_info_billing = document.getElementById('info-billing');
+    var p_info_billing = document.getElementById('p-info-billing');
+    var div_background = document.getElementById('div-generalTable');
 
-        if (div.style.visibility === 'hidden' | div.style.visibility === '') {
+    if (div_info_billing.style.visibility === 'hidden' | div_info_billing.style.visibility === '') {
 
-            div.style.visibility = 'visible'
-            p.innerHTML = resultado
-        } else {
+        div_info_billing.style.visibility = 'visible'
+        p_info_billing.innerHTML = description_data
+        div_background.style.filter = 'blur(2px)'
 
-            div.style.visibility = 'hidden'
+    } else {
 
-        }
+        div_info_billing.style.visibility = 'hidden'
+        p_info_billing.innerHTML = description_data
+        div_background.style.filter = 'blur(0px)'
+    }
+}
 
-    });
-});
- */
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('btn-showdata-show').addEventListener('click', function () {
-
-        var div = document.getElementById('info-service');
-        var cont = document.getElementById('div-generalTable')
-        
-        if (div.style.visibility === 'hidden' | div.style.visibility === '') {
-
-            div.style.visibility = 'visible'
-            cont.style.filter= 'blur(2px)'
-
-        } else {
-
-            div.style.visibility = 'hidden'
-            cont.style.filter= 'blur(0px)'
-
-        }
-
-    });
-});

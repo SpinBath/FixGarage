@@ -1,45 +1,41 @@
 /* custom th */
 
 
-#servicesList-th-owner {
+#billingList-th-owner {
     min-width: 250px;
 }
 
-#servicesList-th-vehicle {
+#billingList-th-vehicle {
     min-width: 250px;
 }
 
-#servicesList-th-description {
+#billingList-th-description {
     min-width: 150px;
 }
 
-#servicesList-th-date {
-    min-width: 150px;
-}
-
-#servicesList-th-price {
+#billingList-th-cost {
     min-width: 100px;
 }
 
-#servicesList-th-price {
+#billingList-th-status {
     border-right: solid 2px #201E43;
-    min-width: 150px;
+    min-width: 100px;
 }
 
 
 /* custom td */
 
-#servicesList-td-price {
+#billingList-td-status {
     border-right: solid 2px #201E43;
 }
 
-#servicesList-td-description,
-#servicesList-td-date,
-#servicesList-td-price {
+#billingList-td-description,
+#billingList-td-cost,
+#billingList-td-status {
     text-align: center;
 }
 
-#servicesList-td-options {
+#billingList-td-options {
     border-left: none;
     text-align: center;
     padding-right: 25px;
@@ -50,7 +46,7 @@
 
 /* Div FormularioClientes */
 
-#form-services {
+#form-billing {
     display: none;
     overflow: scroll;
     margin: auto;
@@ -60,18 +56,18 @@
 }
 
 
-#form-services label {
+#form-billing label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
 
 }
 
-#form-services textarea {
+#form-billing textarea {
     width: 90%;
 }
 
-#form-services input,
+#form-billing input,
 select {
     border: none;
     outline: none;
@@ -88,7 +84,7 @@ select {
 
 }
 
-#form-services button {
+#form-billing button {
     background-color: white;
     border-radius: 30px;
     border: #201E43 2px solid;
@@ -99,7 +95,7 @@ select {
     min-width: 130px;
 }
 
-#form-services button:hover {
+#form-billing button:hover {
     background-color: #201E43;
     color: white;
 
@@ -108,13 +104,13 @@ select {
 
 
 
-
+/* Div show description */
 
 #div-contenido {
     position: relative;
 }
 
-#info-service {
+#info-billing {
     visibility: hidden;
     width: 100%;
     min-width: 280px;
@@ -123,7 +119,7 @@ select {
     top: 150px;
 }
 
-#info-service #btn-showdata-show {
+#info-billing #btn-showdata-show {
     float: right;
     border: none;
     font-weight: bold;
@@ -135,7 +131,7 @@ select {
     background-color: white;
 }
 
-#div-info-service {
+#div-info-billing {
     border: #201E43 3px solid;
     background-color: aliceblue;
     margin-left: auto;
@@ -150,7 +146,7 @@ select {
     font-size: larger;
 }
 
-#p-info-service {
+#p-info-billing {
     border-top: #201E43 2px solid;
     height: 170px;
     padding: 20px;

@@ -63,8 +63,7 @@
     </div>
 
 
-    <form id="form-vehicles" method="POST" action="" {% if is_update %} style="display: block;" {% else %}
-        style="display: none;" {% endif %}>
+    <form id="form-vehicles" method="POST" action="" {% if is_update %} style="display: block;" {% else %} style="display: none;" {% endif %}>
         {% csrf_token %}
         {{form.as_p}}
         <p id="p-saveButton-form">

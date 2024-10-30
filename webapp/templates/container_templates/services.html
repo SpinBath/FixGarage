@@ -6,7 +6,7 @@
 
 
 <link rel="stylesheet" href="/static/styles/main.css">
-<link rel="stylesheet" href="/static/styles/billing.css">
+<link rel="stylesheet" href="/static/styles/services.css">
 
 {% if is_update %}
 <link rel="stylesheet" href="/static/styles/main_update.css">
@@ -26,7 +26,7 @@
             <h3>{% trans "Search by" %}</h3>
 
             <form id="form-searchEngine" method="GET" action="">
-                <input type="text" name="q" placeholder="Name, Address, Phone, Email" value="{{ query }}">
+                <input type="text" name="q" placeholder="Vehicle, Owner, Description, Dates, Price" value="{{ query }}">
                 <button type="submit">{% trans "🔎" %}</button>
             </form>
 
@@ -50,7 +50,7 @@
                         <td id="servicesList-td-vehicle">{{ service.vehicle }}</td>
                         <td id="servicesList-td-owner">{{ service.owner }}</td>
                         <td id="servicesList-td-description">
-                            <button id="btn-showdata" onclick="showdata(this.value)" value="{{ service.description|linebreaksbr }}">Show Data</button>
+                            <button id="btn-showdata" onclick="showdata_service(this.value)" value="{{ service.description|linebreaksbr }}">Show Data</button>
                         </td>
                         <td id="servicesList-td-date">{{ service.entry_date }}<br>{{ service.entry_date }}</td>
                         
@@ -68,9 +68,9 @@
         </div>
 
         <div id="info-service">
-            <div id="div-info-service">Description:<button id="btn-showdata-show">X</button><br>
+            <div id="div-info-service">Description:<button id="btn-showdata-show" onclick="showdata_service()">X</button><br>
                 <p id="p-info-service">
-
+    
                 </p>
             </div>
         </div>

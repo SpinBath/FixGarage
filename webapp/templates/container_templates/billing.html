@@ -48,10 +48,10 @@
                 <tr>
                     <td id="billingList-td-vehicle">{{ billing.vehicle }}</td>
                     <td id="billingList-td-owner">{{ billing.owner }}</td>
-                    <td id="billingList-td-description">{{ billing.description }}</td>
+                    <td id="billingList-td-description"><button id="btn-showdata" onclick="showdata_billing(this.value)" value="{{ billing.description|linebreaksbr }}">Show Data</button></td>
                     <td id="billingList-td-cost">{{ billing.final_price }}</td>
                     <td id="billingList-td-status">{{ billing.status }}</td>
-                    <td>
+                    <td id="billingList-td-options">
                         <a href="/billing/update/{{ billing.id }}">✏️</a>
                         <a href="/billing/delete/{{ billing.id }}">🗑️</a>
                     </td>
@@ -60,6 +60,14 @@
             </tbody>
         </table>
 
+    </div>
+    
+    <div id="info-billing">
+        <div id="div-info-billing">Description:<button id="btn-showdata-show" onclick="showdata_billing()">X</button><br>
+            <p id="p-info-billing">
+
+            </p>
+        </div>
     </div>
 
     <form id="form-billing" method="POST" action="" {% if is_update %} style="display: block;" {% else %} style="display: none;" {% endif %}>
@@ -76,7 +84,7 @@
 
 <footer>
     {% if is_update %}
-    <a href="/services"><button id="button-GoBack">{% trans "Back" %}</button></a>
+    <a href="/billing"><button id="button-GoBack">{% trans "Back" %}</button></a>
     {% else %}
     <button id="Button-addObject-footer">{% trans "Add Billing" %}</button>
     {% endif %}

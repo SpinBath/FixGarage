@@ -78,17 +78,18 @@
 
 }
 
-#form-vehicles input {
+#form-vehicles input, select {
     border: none;
     outline: none;
     border-bottom: 1px solid #201E43;
     font-size: medium;
     padding-left: 10px;
-    width: 100%;
+    width: 90%;
 
 }
 
 #p-saveButton-form {
+    margin-right: 8%;
     text-align: right;
 }
 

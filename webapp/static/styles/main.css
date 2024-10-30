@@ -69,6 +69,7 @@
 /* Div TablaClientes */
 
 #div-generalTable {
+    filter: initial;
     margin-top: 3%;
     margin-left: 6%;
     margin-right: 3%;
