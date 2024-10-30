@@ -6,7 +6,7 @@
 
 
 <link rel="stylesheet" href="/static/styles/main.css">
-<link rel="stylesheet" href="/static/styles/services.css">
+<link rel="stylesheet" href="/static/styles/billing.css">
 
 {% if is_update %}
 <link rel="stylesheet" href="/static/styles/main_update.css">
@@ -50,7 +50,7 @@
                         <td id="servicesList-td-vehicle">{{ service.vehicle }}</td>
                         <td id="servicesList-td-owner">{{ service.owner }}</td>
                         <td id="servicesList-td-description">
-                            <button id="btn-showdata" onclick="showdata(this.value)" value="{{ service.description }}">Show Data</button>
+                            <button id="btn-showdata" onclick="showdata(this.value)" value="{{ service.description|linebreaksbr }}">Show Data</button>
                         </td>
                         <td id="servicesList-td-date">{{ service.entry_date }}<br>{{ service.entry_date }}</td>
                         
@@ -68,7 +68,7 @@
         </div>
 
         <div id="info-service">
-            <div id="div-info-service"><button id="btn-showdata-show">X</button><br>
+            <div id="div-info-service">Description:<button id="btn-showdata-show">X</button><br>
                 <p id="p-info-service">
 
                 </p>

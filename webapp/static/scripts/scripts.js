@@ -154,11 +154,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-function showdata(value){
+function showdata(value) {
 
     var resultado = value
     var div = document.getElementById('info-service');
     var p = document.getElementById('p-info-service');
+    var cont = document.getElementById('div-generalTable')
 
 
     if (div.style.visibility === 'hidden' | div.style.visibility === '') {
@@ -166,11 +167,12 @@ function showdata(value){
         console.log(resultado)
         div.style.visibility = 'visible'
         p.innerHTML = resultado
-        
+        cont.style.filter= 'blur(2px)'
+
     } else {
 
         div.style.visibility = 'hidden'
-
+        cont.style.filter= 'blur(0px)'
     }
 }
 
@@ -200,14 +202,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('btn-showdata-show').addEventListener('click', function () {
 
         var div = document.getElementById('info-service');
-
+        var cont = document.getElementById('div-generalTable')
+        
         if (div.style.visibility === 'hidden' | div.style.visibility === '') {
 
             div.style.visibility = 'visible'
+            cont.style.filter= 'blur(2px)'
 
         } else {
 
             div.style.visibility = 'hidden'
+            cont.style.filter= 'blur(0px)'
 
         }
 

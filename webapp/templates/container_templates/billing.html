@@ -3,58 +3,92 @@
 {% block content %}
 
 <!-- Links  -->
-<link rel="stylesheet" href="/static/styles/hud_style.css">
-<link rel="stylesheet" href="../static/styles/billing.css">
 
-<script src="../static/scripts/clients.js"></script>
+
+<link rel="stylesheet" href="/static/styles/main.css">
+<link rel="stylesheet" href="/static/styles/billing.css">
 
 {% if is_update %}
 <link rel="stylesheet" href="/static/styles/main_update.css">
 {% endif %}
 
+
 <!-- Links  -->
 
-<div class="tableTitle">
-    <h1>{% trans "Billing List" %}</h1>
+<div class="div-generalTitle">
+    <h1>{% if is_update %}{% trans "Edit Bill" %}{% else %}{% trans "Billing List" %}{% endif %}</h1>
 </div>
-<div id="buscador">
-    <input type="text">
-</div>
-<table id="tableBilling">
-    <thead>
-        <tr>
-            <th>{% trans "Vehicle" %}</th>
-            <th>{% trans "Owner" %}</th>
-            <th>{% trans "Description" %}</th>
-            <th>{% trans "Cost" %}</th>
-            <th>{% trans "Pagado" %}</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for billing in billing %}
-        <tr>
-            <td>{{ billing.vehicle }}</td>
-            <td>{{ billing.owner }}</td>
-            <td>{{ billing.description }}</td>
-            <td>{{ billing.final_price }}</td>
-            <td>{{ billing.status }}</td>
-            <td>
-                <a href="/billing/update/{{ billing.id }}">✏️</a>
-                <a href="/billing/delete/{{ billing.id }}">🗑️</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
 
-<form class="billingForm" method="POST" action="">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button name="save">{% trans "Save" %}</button>
-</form>
-<div class="optionsButtons">
-    <button id="ListBillingButton">{% trans "Billing List" %}</button>
+<div id="div-contenido">
+
+    <div id="div-searchEngine" {% if is_update %} style="visibility: hidden;" {% else %} style="visibility: visible" {% endif %}>
+        <h3>{% trans "Search by" %}</h3>
+
+        <form id="form-searchEngine" method="GET" action="">
+            <input type="text" name="q" placeholder="Vehicle, Owner, Description, Cost, Status" value="{{ query }}">
+            <button type="submit">{% trans "🔎" %}</button>
+        </form>
+
+    </div>
+
+    <div id="div-generalTable" {% if is_update %} style="display: none;" {% else %} style="display: block;" {% endif %}>
+
+        <table id="tableBilling">
+            <thead>
+                <tr>
+                    <th id="billingList-th-vehicle">{% trans "Vehicle" %}</th>
+                    <th id="billingList-th-owner">{% trans "Owner" %}</th>
+                    <th id="billingList-th-description">{% trans "Description" %}</th>
+                    <th id="billingList-th-cost">{% trans "Cost" %}</th>
+                    <th id="billingList-th-status">{% trans "Pagado" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for billing in billing %}
+                <tr>
+                    <td id="billingList-td-vehicle">{{ billing.vehicle }}</td>
+                    <td id="billingList-td-owner">{{ billing.owner }}</td>
+                    <td id="billingList-td-description">{{ billing.description }}</td>
+                    <td id="billingList-td-cost">{{ billing.final_price }}</td>
+                    <td id="billingList-td-status">{{ billing.status }}</td>
+                    <td>
+                        <a href="/billing/update/{{ billing.id }}">✏️</a>
+                        <a href="/billing/delete/{{ billing.id }}">🗑️</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <form id="form-billing" method="POST" action="" {% if is_update %} style="display: block;" {% else %} style="display: none;" {% endif %}>
+        {% csrf_token %}
+        {{form.as_p}}
+        <p id="p-saveButton-form">
+            <button name="save">{% trans "Save" %}</button>
+        </p>
+    </form>
 </div>
+
+
+
+
+<footer>
+    {% if is_update %}
+    <a href="/services"><button id="button-GoBack">{% trans "Back" %}</button></a>
+    {% else %}
+    <button id="Button-addObject-footer">{% trans "Add Billing" %}</button>
+    {% endif %}
+</footer>
+
+
+
+
+
+
+
+
 
 <script>
 
