@@ -9,8 +9,32 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             input_password.type = "password";
         }
+    });
+});
 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('btn-showpassword1').addEventListener('click', function () {
 
+        const input_password = document.getElementById('id_password1');
+
+        if (input_password.type === "password") {
+            input_password.type = "text";
+        } else {
+            input_password.type = "password";
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('btn-showpassword2').addEventListener('click', function () {
+
+        const input_password = document.getElementById('id_password2');
+
+        if (input_password.type === "password") {
+            input_password.type = "text";
+        } else {
+            input_password.type = "password";
+        }
     });
 });
 

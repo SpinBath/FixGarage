@@ -9,7 +9,6 @@
     overflow: hidden;
 }
 
-
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -108,7 +107,7 @@ body {
     font-size: x-large;
 }
 
-#desplegable{
+#div-showmenu{
     display: none;
 }
 
@@ -119,7 +118,7 @@ body {
     html{
         overflow: auto;
     }
-    #desplegable{
+    #div-showmenu{
         height: auto;
         display: block ;
     }
@@ -146,7 +145,7 @@ body {
         height: 100dvh;
     }
 
-    #contenido{
+    #content{
         display: block;
     } 
 
@@ -157,7 +156,7 @@ body {
         margin-bottom: auto;
     }
 
-    #desplegable{
+    #div-showmenu{
         background-image: linear-gradient(to bottom, #201E43 50%, transparent 50%);
         text-align: center;
     }

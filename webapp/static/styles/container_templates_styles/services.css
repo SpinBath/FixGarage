@@ -1,0 +1,158 @@
+/* custom th */
+
+
+#servicesList-th-owner {
+    min-width: 250px;
+}
+
+#servicesList-th-vehicle {
+    min-width: 250px;
+}
+
+#servicesList-th-description {
+    min-width: 150px;
+}
+
+#servicesList-th-date {
+    min-width: 150px;
+}
+
+#servicesList-th-price {
+    min-width: 100px;
+}
+
+#servicesList-th-price {
+    border-right: solid 2px #201E43;
+    min-width: 150px;
+}
+
+
+/* custom td */
+
+#servicesList-td-price {
+    border-right: solid 2px #201E43;
+}
+
+#servicesList-td-description,
+#servicesList-td-date,
+#servicesList-td-price {
+    text-align: center;
+}
+
+#servicesList-td-options {
+    border-left: none;
+    text-align: center;
+    padding-right: 25px;
+    min-width: 80px;
+}
+
+
+
+/* Div FormularioClientes */
+
+#form-services {
+    display: none;
+    overflow: scroll;
+    margin: auto;
+    margin-top: -60px;
+    height: 90%;
+    width: 70%;
+}
+
+
+#form-services label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+}
+
+#form-services textarea {
+    width: 90%;
+}
+
+#form-services input,
+select {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #201E43;
+    font-size: medium;
+    padding-left: 10px;
+    width: 90%;
+
+}
+
+#p-saveButton-form {
+    margin-right: 8%;
+    text-align: right;
+
+}
+
+#form-services button {
+    background-color: white;
+    border-radius: 30px;
+    border: #201E43 2px solid;
+    color: #201E43;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 25%;
+    min-width: 130px;
+}
+
+#form-services button:hover {
+    background-color: #201E43;
+    color: white;
+
+}
+
+/* Div show description */
+
+#div-content {
+    position: relative;
+}
+
+#info-service {
+    visibility: hidden;
+    width: 100%;
+    min-width: 280px;
+    min-height: 280px;
+    position: absolute;
+    top: 150px;
+}
+
+#info-service #btn-showdata-show {
+    float: right;
+    border: none;
+    font-weight: bold;
+    font-size: large;
+    color: #201E43;
+    width: 40px;
+    height: 40px;
+    margin-top: -4px;
+    background-color: white;
+}
+
+#div-info-service {
+    border: #201E43 3px solid;
+    background-color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    padding-right: 20px;
+    width: 50%;
+    min-width: 280px;
+    height: 230px;
+    background-color: white;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#p-info-service {
+    border-top: #201E43 2px solid;
+    height: 170px;
+    padding: 20px;
+    padding-right: 20px;
+    font-weight: 400;
+    font-size: medium;
+    overflow: scroll;
+}

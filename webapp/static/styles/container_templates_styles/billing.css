@@ -1,0 +1,157 @@
+/* custom th */
+
+
+#billingList-th-owner {
+    min-width: 250px;
+}
+
+#billingList-th-vehicle {
+    min-width: 250px;
+}
+
+#billingList-th-description {
+    min-width: 150px;
+}
+
+#billingList-th-cost {
+    min-width: 100px;
+}
+
+#billingList-th-status {
+    border-right: solid 2px #201E43;
+    min-width: 100px;
+}
+
+
+/* custom td */
+
+#billingList-td-status {
+    border-right: solid 2px #201E43;
+}
+
+#billingList-td-description,
+#billingList-td-cost,
+#billingList-td-status {
+    text-align: center;
+}
+
+#billingList-td-options {
+    border-left: none;
+    text-align: center;
+    padding-right: 25px;
+    min-width: 80px;
+}
+
+
+
+/* Div FormularioClientes */
+
+#form-billing {
+    display: none;
+    overflow: scroll;
+    margin: auto;
+    margin-top: -60px;
+    height: 90%;
+    width: 70%;
+}
+
+
+#form-billing label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+}
+
+#form-billing textarea {
+    width: 90%;
+}
+
+#form-billing input,
+select {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #201E43;
+    font-size: medium;
+    padding-left: 10px;
+    width: 90%;
+
+}
+
+#p-saveButton-form {
+    margin-right: 8%;
+    text-align: right;
+
+}
+
+#form-billing button {
+    background-color: white;
+    border-radius: 30px;
+    border: #201E43 2px solid;
+    color: #201E43;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 25%;
+    min-width: 130px;
+}
+
+#form-billing button:hover {
+    background-color: #201E43;
+    color: white;
+
+}
+
+
+
+
+/* Div show description */
+
+#div-content {
+    position: relative;
+}
+
+#info-billing {
+    visibility: hidden;
+    width: 100%;
+    min-width: 280px;
+    min-height: 280px;
+    position: absolute;
+    top: 150px;
+}
+
+#info-billing #btn-showdata-show {
+    float: right;
+    border: none;
+    font-weight: bold;
+    font-size: large;
+    color: #201E43;
+    width: 40px;
+    height: 40px;
+    margin-top: -4px;
+    background-color: white;
+}
+
+#div-info-billing {
+    border: #201E43 3px solid;
+    background-color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    padding-right: 20px;
+    width: 50%;
+    min-width: 280px;
+    height: 230px;
+    background-color: white;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#p-info-billing {
+    border-top: #201E43 2px solid;
+    height: 170px;
+    padding: 20px;
+    padding-right: 20px;
+    font-weight: 400;
+    font-size: medium;
+    overflow: scroll;
+}

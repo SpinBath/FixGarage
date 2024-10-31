@@ -1,12 +1,12 @@
 
 /* General */
 
-#contenido {
+#content {
     background-image: none;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
-#contenido a{
+#content a{
     text-decoration: none;
 }
 
@@ -62,7 +62,7 @@
     font-weight: bolder;
 }
 
-#div-contenido{
+#div-content{
     height: 100%;
 }
 
@@ -138,7 +138,7 @@ footer button:hover {
         display: grid;
     } */
 
-    #contenido {
+    #content {
         background-image: grid;
         grid-template-rows: auto 1fr;
         display: grid;

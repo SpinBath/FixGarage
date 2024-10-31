@@ -1,0 +1,113 @@
+
+
+/* custom th */
+
+#vehiclesList-th-licenseplate {
+    border-right: solid 2px #201E43;
+}
+
+
+#vehiclesList-th-owner {
+    min-width: 300px;
+
+}
+
+#vehiclesList-th-brand {
+    min-width: 150px;
+
+}
+
+#vehiclesList-th-model {
+    min-width: 200px;
+
+}
+
+#vehiclesList-th-year {
+    min-width: 100px;
+
+}
+
+#vehiclesList-th-licenseplate {
+    border-right: solid 2px #201E43;
+    min-width: 200px;
+}
+
+
+
+
+
+/* custom td */
+
+
+#vehiclesList-td-year {
+    text-align: center;
+}
+
+#vehiclesList-td-licenseplate {
+    border-right: solid 2px #201E43;
+    text-align: center;
+}
+
+#vehiclesList-td-options {
+    border-left: none;
+    text-align: center;
+    padding-right: 25px;
+    min-width: 50px;
+}
+
+
+
+
+
+/* Div FormularioClientes */
+
+#form-vehicles {
+    display: none;
+    overflow: scroll;
+    margin: auto;
+    margin-top: -60px;
+    height: 80%;
+    width: 70%;
+}
+
+
+#form-vehicles label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+}
+
+#form-vehicles input, select {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #201E43;
+    font-size: medium;
+    padding-left: 10px;
+    width: 90%;
+
+}
+
+#p-saveButton-form {
+    margin-right: 8%;
+    text-align: right;
+}
+
+#form-vehicles button {
+    background-color: white;
+    border-radius: 30px;
+    border: #201E43 2px solid;
+    color: #201E43;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 25%;
+    min-width: 130px;
+
+}
+
+#form-vehicles button:hover {
+    background-color: #201E43;
+    color: white;
+
+}
+
