@@ -3,7 +3,7 @@
 ![FixGarage-BannerImage](https://github.com/XRayBinary/assets/blob/main/FixGarage-1280x640.png?raw=true)
 
 > [!NOTE]  
-> This project is currently under development.
+> Project under development but currently functional.
 
 ## Table of contents
 * [General info](#general-info)
