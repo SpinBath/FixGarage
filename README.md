@@ -1,6 +1,6 @@
 # FixGarage
 
-<span>https://github.com/XRayBinary/assets/blob/main/FixGarage-1280x640.png</span><span>)</span>
+![FixGarage-BannerImage](https://github.com/XRayBinary/assets/blob/main/FixGarage-1280x640.png?raw=true)
 
 > [!NOTE]  
 > This project is currently under development.
