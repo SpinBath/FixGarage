@@ -10,7 +10,12 @@
 * [Setup](#setup)
 
 ## General info
-	 
+
+The application is a minimalistic web app that performs basic CRUD operations on a sample data model.
+
+> [!WARNING]  
+> This is my first web app project.
+
 ## Setup
 
 Clone this repository to your local machine and navigate to the project folder:
