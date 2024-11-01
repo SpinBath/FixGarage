@@ -9,8 +9,15 @@
 
 The application is a minimalistic web app that performs basic CRUD operations on a sample data model.
 
-> [!WARNING]  
-> This is my first web app project.
+# Screenshots
+
+![FixGarage-FixGarage-Login](https://github.com/XRayBinary/assets/blob/main/FixGarage-Login.PNG?raw=true)
+
+![FixGarage-FixGarage-Clients](https://github.com/XRayBinary/assets/blob/main/FixGarage-Clients.PNG?raw=true)
+
+![FixGarage-FixGarage-Services](https://github.com/XRayBinary/assets/blob/main/FixGarage-Services.PNG?raw=true)
+
+![FixGarage-FixGarage-EditVehicle](https://github.com/XRayBinary/assets/blob/main/FixGarage-EditVehicle.PNG?raw=true)
 
 # Setup
 
