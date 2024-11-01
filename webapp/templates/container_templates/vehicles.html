@@ -6,10 +6,11 @@
 <!-- Links  -->
 
 <link rel="stylesheet" href="\static\styles\main.css">
-<link rel="stylesheet" href="\static\styles\container_templates_styles\vehicles.css">
+<link rel="stylesheet" href="\static\styles\vehicles.css">
 
 {% if is_update %}
 <link rel="stylesheet" href="\static\styles\main_update.css">
+
 {% endif %}
 
 
@@ -20,7 +21,7 @@
 </div>
 
 
-<div id="div-contenido">
+<div id="div-content">
     <div id="div-searchEngine" {% if is_update %} style="visibility: hidden;" {% else %} style="visibility: visible" {% endif %}>
         <h3>{% trans "Search by" %}</h3>
 

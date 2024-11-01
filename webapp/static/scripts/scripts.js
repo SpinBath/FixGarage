@@ -43,17 +43,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('button-show-menu').addEventListener('click', function () {
 
         var div = document.getElementById('menu')
-        var contenido = document.getElementById('contenido')
+        var content = document.getElementById('content')
         var container = document.getElementById('container')
-        var desplegable = document.getElementById('desplegable')
+        var div_showmenu = document.getElementById('div-showmenu')
         var button = document.getElementById('button-show-menu')
 
         if (div.style.display === 'none' || div.style.display === '') {
 
 
-            contenido.style.display = 'none';
+            content.style.display = 'none';
             container.style.gridTemplateRows = 'auto';
-            desplegable.style.display = 'none'
+            div_showmenu.style.display = 'none'
 
             div.style.visibility = 'visible'
             div.classList.remove('collapsed');
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             div.style.maxHeight = '0';
             div.style.display = 'none';
 
-            contenido.style.display = 'grid';
+            content.style.display = 'grid';
             container.style.gridTemplateRows = 'auto 1fr';
             button.innerHTML = 'Show Menu';
 

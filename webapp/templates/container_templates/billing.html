@@ -6,7 +6,7 @@
 
 
 <link rel="stylesheet" href="\static\styles\main.css">
-<link rel="stylesheet" href="\static\styles\container_templates_styles\billing.css">
+<link rel="stylesheet" href="\static\styles\billing.css">
 
 {% if is_update %}
 <link rel="stylesheet" href="\static\styles\main_update.css">
@@ -19,7 +19,7 @@
     <h1>{% if is_update %}{% trans "Edit Bill" %}{% else %}{% trans "Billing List" %}{% endif %}</h1>
 </div>
 
-<div id="div-contenido">
+<div id="div-content">
 
     <div id="div-searchEngine" {% if is_update %} style="visibility: hidden;" {% else %} style="visibility: visible" {% endif %}>
         <h3>{% trans "Search by" %}</h3>

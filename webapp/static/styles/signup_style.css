@@ -72,7 +72,7 @@ input{
     width: 100%;
 }
 
-#btn-showpassword{
+#btn-showpassword1, #btn-showpassword2{
     position: absolute;
     left: 93%;
     background-color: #201E43;
