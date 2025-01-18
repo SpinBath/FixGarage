@@ -2,9 +2,6 @@
 
 ![FixGarage-BannerImage](https://github.com/XRayBinary/assets/blob/main/FixGarage-1280x640.png?raw=true)
 
-> [!NOTE]  
-> Project under development but currently functional.
-
 # General info
 
 The application is a minimalistic web app that performs basic CRUD operations on a sample data model.
