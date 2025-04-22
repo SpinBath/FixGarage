@@ -1,6 +1,6 @@
 # FixGarage
 
-![FixGarage-BannerImage](https://github.com/XRayBinary/assets/blob/main/FixGarage-1280x640.png?raw=true)
+![FixGarage-BannerImage](https://github.com/SpinBath/assets/blob/main/FixGarage-Logo.png)
 
 # General info
 
