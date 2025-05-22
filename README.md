@@ -4,7 +4,11 @@
 
 # General info
 
-The application is a minimalistic web app that performs basic CRUD operations on a sample data model.
+Web application for a mechanical workshop developed with Django, allowing basic CRUD operations.
+
+This application helps workshop employees register and manage clients, vehicles, services offered, and billing.
+
+In this way, both the owner and employees can have greater control over the workshop’s operations and more efficient tracking of incoming vehicles.
 
 # Screenshots
 
